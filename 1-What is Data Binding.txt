@@ -1,0 +1,69 @@
+1/-What is Data Binding
+  = Data Binding use [] for Boolean true or false it not convert but (if we use {{}} this will auto convert to string)
+
+ *HTML File
+- One-Way Data Binding use => [value] = " className(from Ts) ";
+- Two-Way Data Binding use => [(ngModel)] = " className(fromts)";
+
+ *TS File
+- className : string = 'We love you';
+
+2/-What is Structural Directives
+
+
+- @if, @For, @Swich (
+			+ @if  -Render element based on a Boolean value
+			+ @For -used to repeat an element for each item in a collection.
+			+ @Switch -display one of a set of elements based on a matching criterion.
+		    )
+    EX: {{old way *ngif}}
+	-HTML File
+		<h1 *ngif="isLoggedIn; else member"> {{userName}} </h1>
+	-use ng-template
+		<ng-template *member>
+		    <h2 *ngif="ismember">user login </h2>
+		</ng-template>
+
+	-TS File
+		+ Import NgIf
+		export class AppComponent{ Add varible
+		 isLoggedIn: Boolean = true;
+		 username: string = 'nita so';
+		}
+	{{New way @if)
+	-HTML File
+		@if (isLogged){
+	 	  <h3>{{ userName }}</h3>
+		}
+	-TS File
+		export class AppComponent{ Add varible
+		 isLoggedIn: Boolean = true;
+		 username: string = 'nita so';
+
+<!-- if Directive with Number Values -->
+
+        <button (click)="countLoginAttempts()" *ngIf="loginCount < 4">Log In</button>
+        <h3 *ngIf="loginCount > 3 "> Exceeded 3 login Attempts, Try Again Later </h3>
+     -BreakDown
+	if they clike 1<4 true
+	        clike 2<4 true
+		clike 3<4 true
+		click 4<4 false if it false the h3 will show (click 4>3 true)
+	so <h3>   
+		click 1>3 false
+		click 2>3 false
+		click 3>3 false
+		click 4>3 true 
+<!--   *ngfor	-->
+
+   <h3 *ngfor ="let user of users">											- let user: we creating a new user variable to tell angular do again through the users arry
+
+
+
+
+
+
+
+
+
+																							

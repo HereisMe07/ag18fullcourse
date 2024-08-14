@@ -1,0 +1,170 @@
+<!-- Ng For Directive -->
+        <!-- <h3>{{users}}</h3>
+
+        <h3>{{users[0]}}</h3>
+        <h3>{{users[1]}}</h3>
+        <h3>{{users[2]}}</h3>
+        <h3>{{users[3]}}</h3> -->
+
+<!-- Ngfor (loop array it run again and again) -->
+      <!-- old way -->
+        <!-- <h3 *ngFor="let user of users">{{ user }}</h3> -->
+      <!-- new way -->
+        <!-- <p>For syntax Approach</p>
+        @for (user of users; track user) {
+            <h3>{{ user }} - Loaded Using For Syntax Block</h3>
+        } -->
+<!-- Fetch (Unordered List) -->
+         <!-- old way -->
+            <!-- <ul>
+                <li *ngFor="let user of users">{{user}}</li>
+            </ul> -->
+        <!-- new way -->
+            <!-- <ul> 
+                @for (user of users; track user) {
+                  <li>{{user}}</li>
+                }
+            </ul> -->
+<!-- Fetch (Array Objects) -->
+        <!-- old way -->             
+            <!-- <ul>
+                <li *ngFor="let user of usersObj; let i = index">{{i}} {{user.email}} <button (click)="onDelete(i)">Delete</button></li>
+            </ul> -->
+        <!-- new way -->
+            <!-- <div *ngIf="usersObj.length == 0">
+                <p>No Users to Display</p>
+            </div> -->
+
+
+            <!-- <ul>
+                @if (usersObj.length == 0) {
+                    <p> No Users to Display - Loaded Using Syntax </p>
+                }
+            </ul> -->
+
+            <!-- <ul>
+
+                @for (user of usersObj; track user;let i = $index; let usersCount = $count; let first = $first; let last = $last; let even = $even; let odd = $odd;) {
+                    <li>
+                        {{even}} - {{odd}} - {{usersCount}} - {{i}} {{user.name}} 
+                        <button (click)="onDelete(user)">Delete</button>
+                    </li>
+                }
+                @empty {
+                    <p> No Users to Display - Loaded Using Empty Syntax </p>
+                }
+
+            </ul> -->
+
+<!-- Change Detection I -->
+        <!-- <button (click)="addNewUser()" >Add New User</button> -->
+<!-- index of (For Loop) -->
+
+<!-- @if, @else Syntax Approach -->
+        <!-- @if (isAdmin) {
+            <h3>Welcome Admin</h3>
+        }
+        @else if (isMember) {
+            <h3>Welcome Member</h3>
+        }
+        @else if (isGuest) {
+            <h3>Welcome Guest</h3>
+        } -->
+
+<!-- if Directive with Number Values -->
+
+        <!-- <button (click)="countLoginAttempts()" *ngIf="loginCount < 4">Log In</button>
+        <h3 *ngIf="loginCount > 3 "> Exceeded 3 login Attempts, Try Again Later </h3> -->
+
+        <!-- <br>
+
+        @if (loginCount < 4) {
+                <button (click)="countLoginAttempts()">Login Syntax</button>
+        }
+        @if (loginCount > 3) {
+                <h4>Exceeded 3 login Attempts, Try Again Later</h4>
+        } -->
+
+<!-- if Directive with String Values -->
+        <!-- <h3 *ngIf="userRole == 'Admin'; else memberMessage ">Welcome Admin</h3>
+        <ng-template #memberMessage>
+                <h3>Welcome Member</h3>
+        </ng-template> -->
+<!-- @if-Block (String values Conditions II) -->
+        <!-- @if (userRole == 'Admin') {
+            <h3>Welcome Admin</h3>
+        }
+        @else if (userRole == 'Member') {
+            <h3>Welcome Member</h3>
+        } -->
+
+<!-- Ng-Template -->
+        <!-- <h4 *ngIf="userRole == 'Admin';else dynamicTemplate">Welcome Admin</h4>
+        <ng-template #dynamicTemplate>
+            <p>This Content is inside ng-template</p>
+        </ng-template> -->
+<!-- NgTemplateOutlet -->
+        <!-- <ng-template #callToAction>
+            <button>Join Now</button>
+            <p>itaitu</p>
+        </ng-template>
+        
+        <div [ngTemplateOutlet]="callToAction">
+            <h5>Sidebar</h5>
+        </div>
+        <div [ngTemplateOutlet]="callToAction">
+            <h5>Hero</h5>
+        </div>
+        <div [ngTemplateOutlet]="callToAction">
+            <h5>Footer</h5>
+        </div> -->
+        
+
+<!-- old way -->
+        <!-- <h1 *ngIf="isLoggedIn">{{ userName }}</h1>
+
+        <h3 *ngIf="!isLoggedIn"> This user don't login </h3> -->
+<!-- New way -->
+        <!-- @if (isLoggedIn) {
+                <h3>{{ userName }}</h3>
+        } -->
+       
+<!-- <h1> First Angular App </h1>
+<h2> {{ title }} </h2>
+<p>{{ 2+1 }}</p> -->
+
+        <!-- <img [src]="imgURL" alt=""> -->
+        <!-- <button [disabled]="isDisable">Disable</button> -->
+
+<!-- class Binding -->
+    
+        <!-- <button [class.active]="isActive" [class.no-active]="!isActive"
+        [class.active-border]="isActive" [class.no-active-border]="!isActive"
+        > Click Me </button> -->
+
+ <!-- style binding  -->
+        <!-- <button [class.apple]="fruitName == 'Vitu' " >Fruit Ninja</button> --> 
+
+        <!-- <button
+        [style.background]="isActive?'red':'green'"
+        [style.border]="isActive?'3px solid blue':'3px solid yellow'"
+        >Click</button>
+
+        <button [class.active]="!isActive">Class Binding</button> -->
+
+<!-- Event Binding -->
+        <!-- <button (mouseover)="buttonClick()">Click </button>
+        <input type="text" (keyup)="keyEnter($event)">
+
+        <input type="text" (keyup.enter)="KeyFil()">
+        <input type="text" (keyup.enter)="Delete(user)" #user id="userInput"> -->
+        <!-- <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)" > -->
+ 
+<!-- 2way binding -->
+   
+        <!-- <input type="text" [value]="textvalue" (keyup.enter)="onKeyup()">
+        <br>
+        <input type="text" [(ngModel)]="textvalue" (keyup.enter)="onKeyup()"> -->
+        
+        <!-- <input type="text" [(ngModel)]="userName">
+        <h3>{{userName}}</h3> -->
