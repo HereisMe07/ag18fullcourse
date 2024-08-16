@@ -168,3 +168,25 @@
         
         <!-- <input type="text" [(ngModel)]="userName">
         <h3>{{userName}}</h3> -->
+
+<!-- Ng SwitchCase --> 
+
+        <div [ngSwitch]="usersRole">
+            <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+            <p *ngSwitchCase="'Member'">Welcome Member</p>
+            <p *ngSwitchCase="'Guest'">Welcome Guest</p>
+
+            <p *ngSwitchDefault>Please Login</p>  <!-- ber ke ot vai value jol te vea rok ot see vea jab ngSwitchDefault mok -->
+        </div>
+<!--  Angular Syntax ( Switch, Case Default) --> 
+        @switch (usersRole) {
+            @case ('Admin') {
+                <p>Welcome Admin</p>
+            }
+            @case ('Member') {
+                <p>Welcome Member</p>
+            }
+            @case ('Editor') {
+                <p>Welcome Editor</p>
+            }
+        }
